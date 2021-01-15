@@ -2,12 +2,14 @@ import logo from "./logo.svg";
 import "./App.css";
 import Pokedex from "./components/Pokedex";
 import PokemonPicture from "./components/PokemonPicture";
+import PokemonNameInput from "./components/PokedexNameInput";
 
 function App() {
   return (
     <div className="App">
       <Pokedex>
         <PokemonPicture />
+        <PokemonNameInput />
       </Pokedex>
     </div>
   );

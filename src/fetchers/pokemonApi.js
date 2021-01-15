@@ -1,5 +1,5 @@
-export function fetchPokemonById(id, dispatch) {
-  const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
+function fetchPokemon(identifier, dispatch) {
+  const url = `https://pokeapi.co/api/v2/pokemon/${identifier}`;
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -10,6 +10,14 @@ export function fetchPokemonById(id, dispatch) {
       dispatch({ action: "setPokemon", params: { pokemon: data } })
     )
     .catch((e) => console.error(e));
+}
+
+export function fetchPokemonById(id, dispatch) {
+  fetchPokemon(id, dispatch);
+}
+
+export function fetchPokemonByName(name, dispatch) {
+  fetchPokemon(name, dispatch);
 }
 
 export function fetchPokemonDescription(url, dispatch) {
