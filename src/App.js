@@ -9,9 +9,19 @@ function App() {
   return (
     <div className="App">
       <Pokedex>
-        <PokemonPicture />
-        <PokemonDescription/>
-        <PokemonNameInput />
+        ##############################
+        <div>
+          <PokemonPicture />
+        </div>
+        ##############################
+        <div>
+          <PokemonDescription />
+        </div>
+        ===============================
+        <div>
+          <div>Taper le nom d'un pokemon</div>
+          <PokemonNameInput />
+        </div>
       </Pokedex>
     </div>
   );

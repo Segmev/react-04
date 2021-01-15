@@ -4,7 +4,7 @@ export const pokemonInitData = {
     id: 0,
     name: "",
     picture: "",
-    description: "",
+    description: "~~~~~~~~~~~~~~~",
 }
 
 export const PokemonContext = createContext(pokemonInitData);
