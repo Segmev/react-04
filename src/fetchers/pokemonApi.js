@@ -9,7 +9,7 @@ function fetchPokemon(identifier, dispatch) {
     .then((data) =>
       dispatch({ action: "setPokemon", params: { pokemon: data } })
     )
-    .catch((e) => console.error(e));
+    .catch((e) => console.error("catched error: " + e));
 }
 
 export function fetchPokemonById(id, dispatch) {
@@ -26,8 +26,12 @@ export function fetchPokemonDescription(url, dispatch) {
     .then((data) =>
       dispatch({
         action: "setPokemonDescription",
-        params: { description: data?.flavor_text_entries[0]?.flavor_text },
+        params: {
+          description: data?.flavor_text_entries.find(
+            (entry) => entry.language.name === "en"
+          ).flavor_text,
+        },
       })
     )
-    .catch((e) => console.error(e));
+    .catch((e) => console.error("catched error: " + e));
 }
