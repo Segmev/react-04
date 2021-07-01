@@ -7,7 +7,7 @@ export const pokemonInitData = {
     description: "~~~~~~~~~~~~~~~",
 }
 
-export const PokemonContext = createContext(pokemonInitData);
+export const PokemonContext = createContext({pokemon: pokemonInitData});
 
 export const PokemonContextProvider = PokemonContext.Provider;
 
